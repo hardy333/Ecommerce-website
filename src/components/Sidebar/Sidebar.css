@@ -1,0 +1,75 @@
+.sidebar-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 25rem;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    background: white;
+    box-shadow: 0px 5px 5px lightgray;
+}
+
+.close-button {
+    background: #f1f1f1;
+    cursor: pointer;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    border-radius: .5rem;
+    max-width: 4rem;
+    padding: .45rem .5rem;
+}
+
+.close-button:hover {
+    background: #d7d7d7;
+}
+
+.sidebar-header {
+    display: inline-flex;
+    height: 6rem;
+    justify-content: space-evenly;
+    border-bottom: 1px solid black;
+}
+
+.item-area {
+    height: 100%;
+    overflow-y: scroll; /* Add the ability to horizontally scroll */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+    
+    .item-area::-webkit-scrollbar {
+        display: none;
+    }
+    .cart-item {
+        padding: .25rem 1rem;
+        border-bottom: 1px solid #c7c7c7;
+    }
+    
+    .cart-numbers {
+        display: inline-flex;
+        width: 100%;
+        justify-content: space-between;
+        margin-top: -2rem;
+    }
+    
+.checkout-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+    .total {
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        font-weight: bold;
+        text-align: center;
+        padding: .5rem ;
+
+    }
+
+    .sidebar-container button {
+        margin: 1rem auto;
+    }

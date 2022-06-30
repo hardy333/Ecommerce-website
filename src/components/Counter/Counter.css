@@ -1,0 +1,29 @@
+.add-to-cart {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 1rem;
+    gap: 2rem;
+}
+
+.item-count {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.add-subtract {
+    font-size: 1rem;
+    padding: .25rem .5rem;
+    border: none;
+    cursor: pointer;
+}
+
+.add-subtract:hover {
+    background: rgb(255, 37, 66);
+    color: white;
+}
+
+.number {
+    padding: 0 .5rem;
+}
