@@ -7,7 +7,7 @@ import { Route, Routes } from "react-router-dom";
 import { useState } from "react";
 
 function App() {
-  const [cartCount, setCartCount] = useState(1)
+  const [cartCount, setCartCount] = useState(0)
   
   return (
     <div className="App">
