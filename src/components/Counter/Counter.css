@@ -1,15 +1,9 @@
-.add-to-cart {
+.item-count {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding-top: 1rem;
-    gap: 2rem;
-}
-
-.item-count {
-    display: flex;
     align-items: center;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 }
 
 .add-subtract {

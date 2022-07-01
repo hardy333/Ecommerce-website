@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import "./ProductCard.css";
 import Counter from "../../components/Counter/Counter";
 
-function ProductCard({name, price, image, setCartCount}) {
+function ProductCard({name, price, image}) {
 
     /*
     const [buttonText, setButtonText] = useState("add to cart");

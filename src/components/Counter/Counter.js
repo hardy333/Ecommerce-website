@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import "./Counter.js";
+import "./Counter.css";
 
-const Counter = () => {
-
-    // item count starts at 0, +/- 1 on button press
+const Counter = ({setCartCount}) => {
 
     const [num, setNum] = useState(0);
 
@@ -22,13 +20,10 @@ const Counter = () => {
     };
 
     return (
-        <div className="add-to-cart">
-            <div className="item-count">
-                <button className="add-subtract" onClick={minusOne}>-</button>
-                <div className="number">{num}</div>
-                <button className="add-subtract" onClick={plusOne}>+</button>
-            </div>
-            {/* <button className="small-button" onClick={toggleText}>{buttonText}</button> */}
+        <div className="item-count">
+            <button className="add-subtract" onClick={minusOne}>-</button>
+            <div className="number">{num}</div>
+            <button className="add-subtract" onClick={plusOne}>+</button>
         </div>
     )
 }

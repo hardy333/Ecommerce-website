@@ -7,14 +7,14 @@ import { Route, Routes } from "react-router-dom";
 import { useState } from "react";
 
 function App() {
-  const [cartCount, setCartCount] = useState(0)
+  const [cartCount, setCartCount] = useState(1)
   
   return (
     <div className="App">
     <NavComp cartCount={cartCount}/>
     <Routes>
       <Route path="/" element={<HomePage  setCartCount={setCartCount}/>} />
-      <Route path="/ShopPage" element={<ShopPage />} />  
+      <Route path="/ShopPage" element={<ShopPage setCartCount={setCartCount}/>} />  
     </Routes>
     <FooterComp />   
     </div>

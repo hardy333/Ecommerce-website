@@ -59,8 +59,6 @@ const ProductCardData = [
     },
 ]
 
-
-
 function ShopPage() {
     return (
         <section>
