@@ -59,12 +59,12 @@ const ProductCardData = [
     },
 ]
 
-function ShopPage() {
+function ShopPage({setCartCount, itemCount, setItemCount}) {
     return (
         <section>
             <div className="card-grid">
                 {ProductCardData.map((obj, index) => (
-                    <ProductCard key={obj.name} name={obj.name} price={obj.price} image={obj.image} />
+                    <ProductCard key={obj.name} name={obj.name} price={obj.price} image={obj.image} setCartCount={setCartCount} itemCount={itemCount} setItemCount={setItemCount} />
                 ))}
             </div>
         </section>

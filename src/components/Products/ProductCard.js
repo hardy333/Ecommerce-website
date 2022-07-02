@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import "./ProductCard.css";
 import Counter from "../../components/Counter/Counter";
 
-function ProductCard({name, price, image, setCartCount}) {
+function ProductCard({name, price, image, setCartCount, itemCount, setItemCount}) {
 
     /*
     const [buttonText, setButtonText] = useState("add to cart");
@@ -24,7 +24,7 @@ function ProductCard({name, price, image, setCartCount}) {
             <div className="product-info">
                 <div className="product-title">{name}</div>
                 <div className="product-price">${price} each</div>
-                <Counter setCartCount={setCartCount}/>
+                <Counter setCartCount={setCartCount} itemCount={itemCount} setItemCount={setItemCount}/>
             </div>
         </div>
     );

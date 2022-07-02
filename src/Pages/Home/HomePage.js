@@ -2,7 +2,31 @@ import "./HomePage.css"
 import { Link } from "react-router-dom";
 import ProductCard from "../../components/Products/ProductCard";
 
-function HomePage({setCartCount}) {
+const FavoritesCardData = [
+    {
+        name: "Orange Chocolate",
+        price: "1.55",
+        image:"https://ghyslain.com/wp-content/uploads/2020/09/Orange-Dark-Chocolate-Macaron-Web.jpg"
+
+    },
+    { 
+        name: "Key Lime",
+        price: "2.15",
+        image:"https://ghyslain.com/wp-content/uploads/2020/09/Key-Lime-Macaron-Web.jpg"
+    },
+    { 
+        name: "Strawberry Banana",
+        price: "1.75",
+        image:"https://ghyslain.com/wp-content/uploads/2020/09/Strawberry-Banana-Macaron-Web.jpg"
+    },
+    { 
+        name: "Blueberry Lemon",
+        price: "1.99",
+        image:"https://ghyslain.com/wp-content/uploads/2020/09/Blueberry-Lemon-Macaron-Web.jpg"
+    }
+]
+
+function HomePage({setCartCount, itemCount, setItemCount}) {
     return (
         <main>
             <section>
@@ -18,10 +42,9 @@ function HomePage({setCartCount}) {
             <section>
                 <h2>Featured Flavors</h2>
                 <div className="card-grid">
-                    <ProductCard setCartCount={setCartCount} name="Strawberry Banana" price="1.55" image="https://ghyslain.com/wp-content/uploads/2020/09/Strawberry-Banana-Macaron-Web.jpg"/>
-                    <ProductCard setCartCount={setCartCount} name="Pistachio Strawberry" price="1.75" image="https://ghyslain.com/wp-content/uploads/2020/09/Pistachio-Strawberry-Macaron-Web.jpg" />
-                    <ProductCard setCartCount={setCartCount} name="Vanilla Blackberry" price="1.99" image="https://ghyslain.com/wp-content/uploads/2020/09/Vanilla-Blackberry-Macaron-Web.jpg" />
-                    <ProductCard setCartCount={setCartCount} name="Caramel Chocolate" price="2.00" image="https://ghyslain.com/wp-content/uploads/2020/09/Caramel-Milk-Chocolate-Macaron-Web.jpg" />
+                    {FavoritesCardData.map((obj, index) => (
+                        <ProductCard key={obj.name} name={obj.name} price={obj.price} image={obj.image} setCartCount={setCartCount} itemCount={itemCount} setItemCount={setItemCount} />
+                    ))}
                 </div>
             </section>
             <section className="customer-reviews">

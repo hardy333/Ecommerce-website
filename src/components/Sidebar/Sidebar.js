@@ -1,19 +1,8 @@
 import React from "react";
-import{ useState } from "react";
+import Counter from "../Counter/Counter"
 import "./Sidebar.css";
 
 function Sidebar() {
-    const [num, setNum] = useState(0);
-    const minusOne = () => {
-        if(num === 0) {
-            return
-        } else {
-            setNum((currentNum) => currentNum - 1)
-        }
-    };
-    const plusOne = () => {
-            setNum((currentNum) => currentNum + 1)
-    };
 
     const sideCart = document.getElementsByClassName("sidebar-container");
     const closeMenu = () => {
@@ -31,11 +20,7 @@ function Sidebar() {
                 <div className="side-item">
                     <div className="side-item-details">
                         <div className="side-item-title">Mint Macarons</div>
-                        <div className="item-count">
-                            <button className="add-subtract" onClick={minusOne}>-</button>
-                            <div className="number">{num}</div>
-                            <button className="add-subtract" onClick={plusOne}>+</button>
-                    </div>
+                        <Counter />
                         <p>$9.95</p>
                     </div>
                     <div className="remove">

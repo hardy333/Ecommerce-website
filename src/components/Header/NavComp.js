@@ -1,8 +1,12 @@
 import "./NavComp.css";
 import React from "react";
 import { Link } from "react-router-dom";
+import Sidebar from "../../components/Sidebar/Sidebar";
 
 function NavComp({cartCount}) {
+    const showSideBar = () => {
+        Sidebar = true;
+    };
 
     return (
         <div className="navbar">
@@ -19,10 +23,10 @@ function NavComp({cartCount}) {
                 <li className="nav-item">
                     <Link to="/ShopPage"><i className="bi bi-handbag-fill" alt="shop"></i></Link>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item" >
                     { /* if cartCount < 1 display count, else display nothing */
                     cartCount ? <div className="cart-counter">{cartCount}</div> : ""}
-                    <Link to="/"><i className="bi bi-cart-check-fill" alt="cart"></i></Link>
+                    <Link to="#" onClick={showSideBar}><i className="bi bi-cart-check-fill" alt="cart"></i></Link>
                 </li>
             </ul>
         </div>
