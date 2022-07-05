@@ -26,7 +26,7 @@ const FavoritesCardData = [
     }
 ]
 
-function HomePage({setCartCount, itemCount, setItemCount}) {
+function HomePage({setCartCount, cartItems, setCartItems}) {
     return (
         <main>
             <section>
@@ -43,7 +43,7 @@ function HomePage({setCartCount, itemCount, setItemCount}) {
                 <h2>Featured Flavors</h2>
                 <div className="card-grid">
                     {FavoritesCardData.map((obj, index) => (
-                        <ProductCard key={obj.name} name={obj.name} price={obj.price} image={obj.image} setCartCount={setCartCount} itemCount={itemCount} setItemCount={setItemCount} />
+                        <ProductCard key={obj.name} name={obj.name} price={obj.price} image={obj.image} setCartCount={setCartCount} cartItems={cartItems} setCartItems={setCartItems} />
                     ))}
                 </div>
             </section>

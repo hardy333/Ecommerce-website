@@ -1,22 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "./ProductCard.css";
 import Counter from "../../components/Counter/Counter";
 
-function ProductCard({name, price, image, setCartCount, itemCount, setItemCount}) {
-
-    /*
-    const [buttonText, setButtonText] = useState("add to cart");
-
-    const toggleText = () => {
-        setButtonText((state) => (state === "remove" ? "add to cart" : "remove"));
-        if(buttonText === "remove"){
-            setCartCount(currCount => currCount - num)
-        }else {
-            setCartCount(currCount => currCount + num)
-        }
-
-    };
-    */
+function ProductCard({name, price, image, setCartCount, cartItems, setCartItems}) {
 
     return (
         <div className="card">
@@ -24,7 +10,7 @@ function ProductCard({name, price, image, setCartCount, itemCount, setItemCount}
             <div className="product-info">
                 <div className="product-title">{name}</div>
                 <div className="product-price">${price} each</div>
-                <Counter setCartCount={setCartCount} itemCount={itemCount} setItemCount={setItemCount}/>
+                <Counter setCartCount={setCartCount} cartItems={cartItems} setCartItems={setCartItems} />
             </div>
         </div>
     );

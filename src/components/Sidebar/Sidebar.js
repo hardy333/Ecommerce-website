@@ -2,10 +2,10 @@ import React from "react";
 import Counter from "../Counter/Counter"
 import "./Sidebar.css";
 
-function Sidebar() {
+function Sidebar(cartItems) {
 
-    const sideCart = document.getElementsByClassName("sidebar-container");
     const closeMenu = () => {
+        
     };
 
     return (
@@ -13,20 +13,18 @@ function Sidebar() {
             <div className="close-button" onClick={closeMenu}>
                 <i className="bi bi-file-excel-fill"></i> Close
             </div>
-            <div className="sidebar-header">
+            <div className="sidebar-header"> 
                 <h3>Shopping Cart</h3>
             </div>
             <div className="item-area">
-                <div className="side-item">
-                    <div className="side-item-details">
-                        <div className="side-item-title">Mint Macarons</div>
-                        <Counter />
-                        <p>$9.95</p>
+                {/* if cart is empty, say so */}
+                {cartItems.length === 0 && <div>Your cart is empty</div>}
+                {/*cartItems.map((cartItems) => (
+                    <div key={cartItems.id} className="row">
+                        <div>{cartItems.name}</div>
+                        
                     </div>
-                    <div className="remove">
-
-                    </div>
-                </div>
+                ))*/}
             </div>
             <div className="checkout-area">
                 <div className="total">Total $9.95</div>
