@@ -1,16 +1,15 @@
 import React from "react";
+import { ArrowLeftCircle } from "react-bootstrap-icons";
 import Counter from "../Counter/Counter"
 import "./Sidebar.css";
 
-function Sidebar(cartItems) {
+function Sidebar({cartItems}) {
 
-    const closeMenu = () => {
-        
-    };
+    
 
     return (
         <div className="sidebar-container">
-            <div className="close-button" onClick={closeMenu}>
+            <div className="close-button">
                 <i className="bi bi-file-excel-fill"></i> Close
             </div>
             <div className="sidebar-header"> 
@@ -19,12 +18,18 @@ function Sidebar(cartItems) {
             <div className="item-area">
                 {/* if cart is empty, say so */}
                 {cartItems.length === 0 && <div>Your cart is empty</div>}
-                {/*cartItems.map((cartItems) => (
-                    <div key={cartItems.id} className="row">
-                        <div>{cartItems.name}</div>
-                        
-                    </div>
-                ))*/}
+                {cartItems.filter((cartItem) => cartItem.qty > 0).map((cartItem) => {
+                    console.log(cartItem.image)
+
+                    return (
+                        <div key={cartItem.name} >
+                            <div>{cartItem.name}</div>
+                            <div>{cartItem.image} sjdghdsj</div>
+                            <img src={cartItem.image} />
+                            <p>{cartItem.qty}</p>
+                        </div>
+                    )
+                })}
             </div>
             <div className="checkout-area">
                 <div className="total">Total $9.95</div>

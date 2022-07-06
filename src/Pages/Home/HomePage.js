@@ -1,30 +1,9 @@
 import "./HomePage.css"
 import { Link } from "react-router-dom";
 import ProductCard from "../../components/Products/ProductCard";
+import productCardData from "../../productCardData";
 
-const FavoritesCardData = [
-    {
-        name: "Orange Chocolate",
-        price: "1.55",
-        image:"https://ghyslain.com/wp-content/uploads/2020/09/Orange-Dark-Chocolate-Macaron-Web.jpg"
-
-    },
-    { 
-        name: "Key Lime",
-        price: "2.15",
-        image:"https://ghyslain.com/wp-content/uploads/2020/09/Key-Lime-Macaron-Web.jpg"
-    },
-    { 
-        name: "Strawberry Banana",
-        price: "1.75",
-        image:"https://ghyslain.com/wp-content/uploads/2020/09/Strawberry-Banana-Macaron-Web.jpg"
-    },
-    { 
-        name: "Blueberry Lemon",
-        price: "1.99",
-        image:"https://ghyslain.com/wp-content/uploads/2020/09/Blueberry-Lemon-Macaron-Web.jpg"
-    }
-]
+const FavoritesCardData = productCardData.filter((productObj) => productObj.favorite)
 
 function HomePage({setCartCount, cartItems, setCartItems}) {
     return (
