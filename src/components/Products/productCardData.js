@@ -38,7 +38,7 @@ const productCardData = [
         
     },
     { 
-        name: "chocolate Coffee",
+        name: "Chocolate Coffee",
         price: "2.25",
         image:"https://ghyslain.com/wp-content/uploads/2020/09/Chocolate-Coffee-Macaron-We.jpg",
          favorite: false

@@ -1,0 +1,48 @@
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    font-size: 1.1rem;
+    justify-content: space-between;
+}
+
+.image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: none;
+    width: 5rem;
+    height: 4rem;
+}
+
+    .numbers {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .item-counter {
+        margin: .5rem 0;
+        font-size: .9rem;
+    }
+
+    button.add-subtract {
+        margin: 0;
+    }
+
+    .sub-total {
+        font-size: 1.1rem;
+        color: black;
+    }
+
+.remove {
+    background: #f1f1f1;
+    border-radius: .15rem;
+    font-size: .75rem;
+    padding: .25rem;
+}
+
+    .remove:hover {
+        background-color:rgb(255, 37, 66);
+        color: white;
+    }

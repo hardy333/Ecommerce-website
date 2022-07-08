@@ -1,4 +1,8 @@
-.sidebar-container {
+.sidebar-closed {
+    display: none;
+}
+
+.sidebar-open {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -43,6 +47,7 @@
     .item-area::-webkit-scrollbar {
         display: none;
     }
+    
     .cart-item {
         padding: .25rem 1rem;
         border-bottom: 1px solid #c7c7c7;
@@ -70,6 +75,6 @@
 
     }
 
-    .sidebar-container button {
+    .sidebar-open button {
         margin: 1rem auto;
     }

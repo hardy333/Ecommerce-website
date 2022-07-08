@@ -11,7 +11,6 @@ const Counter = ({setCartCount, cartItems, setCartItems, name}) => {
         } 
         else if ( itemCount === 1 ) {
             setCartCount(currentCartCount => currentCartCount - 1)
-            // setItemCount(itemCount - 1)
         } 
 
         setItemCount((currentItemCount) => currentItemCount - 1)
@@ -22,8 +21,7 @@ const Counter = ({setCartCount, cartItems, setCartItems, name}) => {
                 }
                 return currItem
             })
-        )
-        
+        ) 
     };
     
     // click add 1 qty, qty equal to 1 adds cartItem to Sidebar
@@ -31,8 +29,6 @@ const Counter = ({setCartCount, cartItems, setCartItems, name}) => {
 
         if(itemCount === 0) {
             setCartCount(currentCartCount => currentCartCount + 1)
-            // code to add to sidebar here
-            // setCartItems( cartItems => [...cartItems, ])
         }
             setItemCount((currentItemCount) => currentItemCount + 1)
             setCartItems(
@@ -43,17 +39,7 @@ const Counter = ({setCartCount, cartItems, setCartItems, name}) => {
                     return currItem
                 })
             )
-
     };
-
-    // if(currItem.name !== name){
-    //     return currItem
-    // }else{
-    //     return {name, qty: currItem.qty +
-    // }
-
-    const x = true ? "A" : "B"
-    console.log(x)
 
     return (
         <div className="item-counter">

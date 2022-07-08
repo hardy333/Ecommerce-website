@@ -1,7 +1,7 @@
 import "./HomePage.css"
 import { Link } from "react-router-dom";
 import ProductCard from "../../components/Products/ProductCard";
-import productCardData from "../../productCardData";
+import productCardData from "../../components/Products/productCardData";
 
 const FavoritesCardData = productCardData.filter((productObj) => productObj.favorite)
 
@@ -22,7 +22,14 @@ function HomePage({setCartCount, cartItems, setCartItems}) {
                 <h2>Featured Flavors</h2>
                 <div className="card-grid">
                     {FavoritesCardData.map((obj, index) => (
-                        <ProductCard key={obj.name} name={obj.name} price={obj.price} image={obj.image} setCartCount={setCartCount} cartItems={cartItems} setCartItems={setCartItems} />
+                        <ProductCard 
+                            key={obj.name}
+                            name={obj.name} 
+                            price={obj.price} 
+                            image={obj.image} 
+                            setCartCount={setCartCount} 
+                            cartItems={cartItems} 
+                            setCartItems={setCartItems} />
                     ))}
                 </div>
             </section>

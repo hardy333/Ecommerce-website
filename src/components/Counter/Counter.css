@@ -1,23 +1,22 @@
 .item-counter {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
     align-items: center;
-    margin-top: 1.5rem;
 }
 
 .add-subtract {
     font-size: 1rem;
-    padding: .25rem .5rem;
+    height: 1.5rem;
+    width: 1.5rem;
     border: none;
     cursor: pointer;
 }
 
 .add-subtract:hover {
-    background: rgb(255, 37, 66);
     color: white;
+    background:rgb(255, 37, 66);
 }
 
 .number {
-    padding: 0 .5rem;
+    text-align: center;
+    width: 1.5rem;
 }

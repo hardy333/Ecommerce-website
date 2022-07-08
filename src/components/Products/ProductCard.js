@@ -10,7 +10,11 @@ function ProductCard({name, price, image, setCartCount, cartItems, setCartItems}
             <div className="product-info">
                 <div className="product-title">{name}</div>
                 <div className="product-price">${price} each</div>
-                <Counter name={name} setCartCount={setCartCount} cartItems={cartItems} setCartItems={setCartItems} />
+                <Counter 
+                    name={name} 
+                    setCartCount={setCartCount} 
+                    cartItems={cartItems}
+                    setCartItems={setCartItems} />
             </div>
         </div>
     );
