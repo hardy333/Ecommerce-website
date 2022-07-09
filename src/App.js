@@ -5,7 +5,7 @@ import ShopPage from "./Pages/Shop/ShopPage";
 import Sidebar from "./components/Sidebar/Sidebar";
 import FooterComp from "./components/Footer/FooterComp";
 import { Route, Routes } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import productCardData from "./components/Products/productCardData";
 
 function App() {
@@ -15,6 +15,13 @@ function App() {
   // Add products to sidebar
   const [cartItems, setCartItems] = useState(() => productCardData.map((productObj) => ({image: productObj.image, name: productObj.name, price: productObj.price, qty:0}) ));
  
+  // Keep local storage data
+  useEffect(() => {
+    localStorage.setItem("storedData", JSON.stringify(cartItems));
+  }, [cartItems]);
+
+  console.log(cartItems)
+
   // Open/close sidebar
   const [sidebarStatus, setSidebarStatus] = useState(false);
 

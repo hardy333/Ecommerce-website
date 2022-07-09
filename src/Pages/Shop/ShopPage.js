@@ -1,7 +1,6 @@
 import ProductCard from "../../components/Products/ProductCard";
 import productCardData from "../../components/Products/productCardData";
 
-
 function ShopPage({setCartCount,  cartItems, setCartItems}) {
     return (
         <section>

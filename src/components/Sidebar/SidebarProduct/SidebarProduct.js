@@ -5,6 +5,9 @@ import "./SidebarProduct.css";
 function SidebarProduct({name, qty, price, image, cartItems, setCartItems}) {
     const num = qty * price;
     const subTotal = num.toFixed(2);
+    const remove = () => {
+        
+    }
 
     return (
         <div className="cart-item" key={name}>
@@ -16,7 +19,7 @@ function SidebarProduct({name, qty, price, image, cartItems, setCartItems}) {
                     <div className="sub-total">${subTotal}</div>
                 </div>
             </div>
-            <div className="remove">Remove</div>
+            <div className="remove" onClick={remove}>Remove</div>
         </div>
     )
 }

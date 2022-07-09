@@ -7,11 +7,9 @@ function Sidebar({cartItems, setCartItems, sidebarStatus, setSidebarStatus}) {
 
     const hideSidebar = () => setSidebarStatus(!sidebarStatus);
 
-    const totalAmount = productCardData.reduce(
-        (accumulator, currentValue) => accumulator.price + currentValue
-    );
-
-    console.log(totalAmount);
+    // const totalAmount = () = > {
+    //      return cartItems.reduce((sum, { quantity }) => accumulator.price + currentValue
+    // );
 
     return (
         <div className={sidebarStatus ? "sidebar-open" : "sidebar-closed"}>
@@ -39,7 +37,7 @@ function Sidebar({cartItems, setCartItems, sidebarStatus, setSidebarStatus}) {
                 })}
             </div>
             <div className="checkout-area">
-                <div className="total">Total ${totalAmount}</div>
+                {/* <div className="total">Total ${totalAmount}</div> */}
                 <button className="large-button">Checkout</button>
             </div>
         </div>

@@ -26,19 +26,18 @@ const Counter = ({setCartCount, cartItems, setCartItems, name}) => {
     
     // click add 1 qty, qty equal to 1 adds cartItem to Sidebar
     const plusOne = () => {
-
         if(itemCount === 0) {
             setCartCount(currentCartCount => currentCartCount + 1)
         }
-            setItemCount((currentItemCount) => currentItemCount + 1)
-            setCartItems(
-                currItems => currItems.map(currItem => {
-                    if(currItem.name === name){
-                        return {...currItem, qty: currItem.qty + 1}
-                    }
-                    return currItem
-                })
-            )
+        setItemCount((currentItemCount) => currentItemCount + 1)
+        setCartItems(
+            currItems => currItems.map(currItem => {
+                if(currItem.name === name){
+                    return {...currItem, qty: currItem.qty + 1}
+                }
+                return currItem
+            })
+        );
     };
 
     return (

@@ -67,7 +67,7 @@ const productCardData = [
         price: "1.99",
         image:"https://ghyslain.com/wp-content/uploads/2020/09/Vanilla-Blackberry-Macaron-Web.jpg",
          favorite: false
-    },
+    }
 ]
 
 export default productCardData;
