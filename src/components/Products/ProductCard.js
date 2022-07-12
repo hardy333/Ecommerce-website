@@ -2,7 +2,7 @@ import React from 'react';
 import "./ProductCard.css";
 import Counter from "../../components/Counter/Counter";
 
-function ProductCard({name, price, image, setCartCount, cartItems, setCartItems}) {
+function ProductCard({name, price, image, qty, setCartCount, cartItems, setCartItems}) {
 
     return (
         <div className="card">
@@ -10,7 +10,8 @@ function ProductCard({name, price, image, setCartCount, cartItems, setCartItems}
             <div className="product-info">
                 <div className="product-title">{name}</div>
                 <div className="product-price">${price} each</div>
-                <Counter 
+                <Counter
+                    qty={qty}
                     name={name} 
                     setCartCount={setCartCount} 
                     cartItems={cartItems}

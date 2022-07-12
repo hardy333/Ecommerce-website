@@ -6,7 +6,7 @@ function SidebarProduct({name, qty, price, image, cartItems, setCartItems}) {
     const num = qty * price;
     const subTotal = num.toFixed(2);
     const remove = () => {
-        
+
     }
 
     return (
@@ -17,9 +17,9 @@ function SidebarProduct({name, qty, price, image, cartItems, setCartItems}) {
                 <div className="numbers">
                     <Counter name={name} cartItems={cartItems} setCartItems={setCartItems}/>
                     <div className="sub-total">${subTotal}</div>
+                    <div className="remove" onClick={remove}>Remove</div>
                 </div>
             </div>
-            <div className="remove" onClick={remove}>Remove</div>
         </div>
     )
 }
