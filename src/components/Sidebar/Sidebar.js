@@ -7,9 +7,11 @@ function Sidebar({cartItems, setCartItems, sidebarStatus, setSidebarStatus}) {
 
     const hideSidebar = () => setSidebarStatus(!sidebarStatus);
 
-    // const totalAmount = () = > {
-    //      return cartItems.reduce((sum, { quantity }) => accumulator.price + currentValue
-    // );
+    // const totalAmount =  cartItems.qty.reduce((sum, cartItems={}) => {
+    //     return sum
+    // });
+
+    // console.log(sum)
 
     return (
         <div className={sidebarStatus ? "sidebar-open" : "sidebar-closed"}>
@@ -20,9 +22,7 @@ function Sidebar({cartItems, setCartItems, sidebarStatus, setSidebarStatus}) {
                 <h3>Shopping Cart</h3>
             </div>
             <div className="item-area">
-                {/* if cart is empty, say so */}
                 {cartItems.length === 0 && <div>Your cart is empty</div>}
-                {/* otherwise iterate through selected items */}
                 {cartItems.filter((obj) => obj.qty > 0).map((obj) => {
                     return (
                         <SidebarProduct 

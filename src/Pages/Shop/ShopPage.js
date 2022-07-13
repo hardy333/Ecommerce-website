@@ -9,7 +9,8 @@ function ShopPage({setCartCount,  cartItems, setCartItems}) {
                     <ProductCard 
                         key={obj.name} 
                         name={obj.name} 
-                        price={obj.price} 
+                        price={obj.price}
+                        qty={obj.qty}
                         image={obj.image} 
                         setCartCount={setCartCount} 
                         cartItems={cartItems} 

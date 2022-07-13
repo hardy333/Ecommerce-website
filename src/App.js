@@ -9,18 +9,22 @@ import { useState, useEffect } from "react";
 import productCardData from "./components/Products/productCardData";
 
 function App() {
-  
-  const [cartCount, setCartCount] = useState(0);
 
-  const cartFromLocalStorage = JSON.parse(localStorage.getItem("storedData"), []);
-
+  // control cart item data
+  const cartFromLocalStorage = JSON.parse(localStorage.getItem("storedData"));
   const [cartItems, setCartItems] = useState(() =>
-    localStorage ? cartFromLocalStorage : productCardData.map((productObj) => ({image: productObj.image, name: productObj.name, price: productObj.price, qty:0}))
+    cartFromLocalStorage || productCardData.map((productObj) => ({image: productObj.image, name: productObj.name, price: productObj.price, qty:0}))
   );
-
   useEffect(() => {
     localStorage.setItem("storedData", JSON.stringify(cartItems))
   }, [cartItems]);
+
+
+  
+  // control cart # counter
+  let validItems = cartItems.filter((cartItems) => cartItems.qty > 0)
+  const [cartCount, setCartCount] = useState(validItems.length)
+
 
 
   const [sidebarStatus, setSidebarStatus] = useState(false);

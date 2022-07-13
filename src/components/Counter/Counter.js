@@ -1,10 +1,8 @@
 import "./Counter.css";
-import { useState } from "react";
 
-const Counter = ({setCartCount, cartItems, setCartItems, name}) => {
-    const [itemCount, setItemCount] = useState(cartItems.find((item) => item.name === name ).qty)
-
-    // click subtracts 1 qty, < 1 removes cartItem from Sidebar, < 0 does nothing
+const Counter = ({setCartCount, cartItems, setCartItems, name, qty}) => {
+    const itemCount = cartItems.find((item) => item.name === name ).qty
+    
     const minusOne = () => {
         if (itemCount <= 0) {
             return
@@ -12,8 +10,6 @@ const Counter = ({setCartCount, cartItems, setCartItems, name}) => {
         else if ( itemCount === 1 ) {
             setCartCount(currentCartCount => currentCartCount - 1)
         } 
-
-        setItemCount((currentItemCount) => currentItemCount - 1)
         setCartItems(
             currItems => currItems.map(currItem => {
                 if(currItem.name === name){
@@ -24,12 +20,11 @@ const Counter = ({setCartCount, cartItems, setCartItems, name}) => {
         ) 
     };
     
-    // click add 1 qty, qty equal to 1 adds cartItem to Sidebar
+    
     const plusOne = () => {
         if(itemCount === 0) {
             setCartCount(currentCartCount => currentCartCount + 1)
         }
-        setItemCount((currentItemCount) => currentItemCount + 1)
         setCartItems(
             currItems => currItems.map(currItem => {
                 if(currItem.name === name){
