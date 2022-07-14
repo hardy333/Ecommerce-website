@@ -10,7 +10,6 @@ import productCardData from "./components/Products/productCardData";
 
 function App() {
 
-  // control cart item data
   const cartFromLocalStorage = JSON.parse(localStorage.getItem("storedData"));
   const [cartItems, setCartItems] = useState(() =>
     cartFromLocalStorage || productCardData.map((productObj) => ({image: productObj.image, name: productObj.name, price: productObj.price, qty:0}))
@@ -20,11 +19,8 @@ function App() {
   }, [cartItems]);
 
 
-  
-  // control cart # counter
-  let validItems = cartItems.filter((cartItems) => cartItems.qty > 0)
-  const [cartCount, setCartCount] = useState(validItems.length)
-
+  // const selectedItems = cartItems.filter((obj)=>obj.qty >= 1);
+  // console.log(selectedItems.length);
 
 
   const [sidebarStatus, setSidebarStatus] = useState(false);
@@ -32,19 +28,21 @@ function App() {
   return (
     <div className="App">
     <NavComp 
-          cartCount={cartCount} 
+          // cartCount={cartCount} 
+          cartItems={cartItems}
           sidebarStatus={sidebarStatus} 
           setSidebarStatus={setSidebarStatus} />
     <Routes>
       <Route path="/" element={<HomePage 
-          setCartCount={setCartCount}
+          // setCartCount={setCartCount}
           setCartItems={setCartItems}
           cartItems={cartItems} />} />
       <Route path="/ShopPage" element={<ShopPage 
-          setCartCount={setCartCount}
+          // setCartCount={setCartCount}
           setCartItems={setCartItems}
           cartItems={cartItems} />} /> 
     </Routes>
+    
     <Sidebar 
         cartItems={cartItems}
         setCartItems={setCartItems}

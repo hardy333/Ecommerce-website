@@ -2,9 +2,11 @@ import "./NavComp.css";
 import React from "react";
 import { Link } from "react-router-dom";
 
-function NavComp({cartCount, sidebarStatus, setSidebarStatus}) {
+function NavComp({cartItems, sidebarStatus, setSidebarStatus}) {
     
     const showSidebar = () => setSidebarStatus(!sidebarStatus);
+
+    const cartCount = cartItems.filter((obj)=> obj.qty > 0).length;
 
     return (
         <div className="navbar">

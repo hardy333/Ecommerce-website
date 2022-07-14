@@ -1,17 +1,18 @@
 import React from "react";
-import productCardData from "../Products/productCardData";
 import "./Sidebar.css";
 import SidebarProduct from "./SidebarProduct/SidebarProduct";
 
 function Sidebar({cartItems, setCartItems, sidebarStatus, setSidebarStatus}) {
-
     const hideSidebar = () => setSidebarStatus(!sidebarStatus);
 
-    // const totalAmount =  cartItems.qty.reduce((sum, cartItems={}) => {
-    //     return sum
-    // });
+    const totalAmount = cartItems.reduce((sum, cartItem) => {
+        if (cartItem.qty > 0) {
+            return sum += Number(cartItem.price) * cartItem.qty
+        }
 
-    // console.log(sum)
+        return sum
+
+    }, 0);
 
     return (
         <div className={sidebarStatus ? "sidebar-open" : "sidebar-closed"}>
@@ -37,7 +38,7 @@ function Sidebar({cartItems, setCartItems, sidebarStatus, setSidebarStatus}) {
                 })}
             </div>
             <div className="checkout-area">
-                {/* <div className="total">Total ${totalAmount}</div> */}
+                <div className="total">Total ${totalAmount.toFixed(2)}</div>
                 <button className="large-button">Checkout</button>
             </div>
         </div>

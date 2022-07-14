@@ -1,14 +1,11 @@
 import "./Counter.css";
 
-const Counter = ({setCartCount, cartItems, setCartItems, name, qty}) => {
+const Counter = ({cartItems, setCartItems, name}) => {
     const itemCount = cartItems.find((item) => item.name === name ).qty
     
     const minusOne = () => {
         if (itemCount <= 0) {
             return
-        } 
-        else if ( itemCount === 1 ) {
-            setCartCount(currentCartCount => currentCartCount - 1)
         } 
         setCartItems(
             currItems => currItems.map(currItem => {
@@ -22,9 +19,6 @@ const Counter = ({setCartCount, cartItems, setCartItems, name, qty}) => {
     
     
     const plusOne = () => {
-        if(itemCount === 0) {
-            setCartCount(currentCartCount => currentCartCount + 1)
-        }
         setCartItems(
             currItems => currItems.map(currItem => {
                 if(currItem.name === name){
