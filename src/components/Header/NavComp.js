@@ -15,13 +15,13 @@ function NavComp({cartItems, sidebarStatus, setSidebarStatus}) {
             </div>
             <ul className="nav-list">
                 <li className="nav-item brand">
-                    <Link to="/"><i className="bi bi-hearts"></i> Sweet Treats</Link>
+                    <Link to="./"><i className="bi bi-hearts"></i> Sweet Treats</Link>
                 </li>
                 <li className="nav-item">
                     <a href="#"><i className="bi bi-search" alt="search"></i></a>
                 </li>
                 <li className="nav-item">
-                    <Link to="/ShopPage"><i className="bi bi-handbag-fill" alt="shop"></i></Link>
+                    <Link to="./ShopPage"><i className="bi bi-handbag-fill" alt="shop"></i></Link>
                 </li>
                 <li className="nav-item" onClick={showSidebar}>
                     {cartCount ? <div className="cart-counter">{cartCount}</div> : ""}

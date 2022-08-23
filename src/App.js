@@ -33,11 +33,11 @@ function App() {
           sidebarStatus={sidebarStatus} 
           setSidebarStatus={setSidebarStatus} />
     <Routes>
-      <Route path="/" element={<HomePage 
+      <Route path="./" element={<HomePage 
           // setCartCount={setCartCount}
           setCartItems={setCartItems}
           cartItems={cartItems} />} />
-      <Route path="/ShopPage" element={<ShopPage 
+      <Route path="./ShopPage" element={<ShopPage 
           // setCartCount={setCartCount}
           setCartItems={setCartItems}
           cartItems={cartItems} />} /> 
